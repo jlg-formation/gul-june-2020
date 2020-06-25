@@ -1,0 +1,23 @@
+img {
+  height: 2em;
+  padding-right: 0.5em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background: #eee;
+  height: 3em;
+  padding: 0 0.5em;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  text-decoration: inherit;
+  color: inherit;
+}
+
+span {
+  font-size: 1.5em;
+}
