@@ -16,6 +16,9 @@ a {
   align-items: center;
   text-decoration: inherit;
   color: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 span {
