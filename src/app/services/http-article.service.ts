@@ -14,7 +14,7 @@ export class HttpArticleService extends ArticleService {
   }
 
   refresh(): void {
-    this.http.get<Article[]>('http://localhost:3000/ws/articles').subscribe({
+    this.http.get<Article[]>('/ws/articles').subscribe({
       next: (articles) => {
         console.log('articles: ', articles);
         this.articles = articles;
@@ -33,7 +33,7 @@ export class HttpArticleService extends ArticleService {
   add(article: Article): void {
     super.add(article);
     this.http
-      .post<void>('http://localhost:3000/ws/articles', article)
+      .post<void>('/ws/articles', article)
       .subscribe({
         next: () => {
           this.refresh();
@@ -57,7 +57,7 @@ export class HttpArticleService extends ArticleService {
       }),
       body: ids,
     };
-    this.http.delete('http://localhost:3000/ws/articles', options).subscribe({
+    this.http.delete('/ws/articles', options).subscribe({
       next: () => {
         this.refresh();
       },
