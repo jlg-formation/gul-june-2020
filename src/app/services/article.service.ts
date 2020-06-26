@@ -30,4 +30,8 @@ export class ArticleService {
     this.articles.push(article);
     this.save();
   }
+
+  refresh(): void {
+    this.articles = this.getArticles();
+  }
 }
