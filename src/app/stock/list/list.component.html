@@ -1,9 +1,9 @@
 <main>
   <h1>Liste des articles</h1>
   <nav>
-    <button (click)="articleService.refresh()">Rafraichir</button>
-    <button routerLink="/stock/new">Ajouter</button>
-    <button (click)="remove()" *ngIf="selectedArticles.length > 0">Supprimer</button>
+    <button (click)="articleService.refresh()"><fa-icon [icon]="faRedo"></fa-icon></button>
+    <button routerLink="/stock/new"><fa-icon [icon]="faPlus"></fa-icon></button>
+    <button (click)="remove()" *ngIf="selectedArticles.length > 0"><fa-icon [icon]="faTrashAlt"></fa-icon></button>
   </nav>
   <table>
     <caption>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticleService } from 'src/app/services/article.service';
 import { Article } from 'src/app/interfaces/article';
+import { faTrashAlt, faRedo, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-list',
@@ -8,6 +9,9 @@ import { Article } from 'src/app/interfaces/article';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
+  faPlus = faPlus;
+  faRedo = faRedo;
+  faTrashAlt = faTrashAlt;
   selectedArticles: Article[] = [];
 
   constructor(public articleService: ArticleService) {}
