@@ -12,11 +12,11 @@ nav {
 
 table {
   border-collapse: collapse;
-  border: 0.1em solid #ccc
+  border: 0.1em solid #bbb
 }
 
 thead {
-  background: #ccc;
+  background: #bbb;
 }
 
 th, td {
@@ -26,6 +26,14 @@ th, td {
 
 tbody tr:nth-child(even) {
   background: #eee;
+}
+
+tbody tr:hover {
+  background: #ddd;
+}
+
+tbody tr.selected {
+  background: #ccc;
 }
 
 td.qty, td.price {
