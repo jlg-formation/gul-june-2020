@@ -2,6 +2,12 @@
 
 @import "../node_modules/normalize.css/normalize.css";
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
 }
@@ -13,6 +19,12 @@ main {
 
 h1 {
   text-align: center;
+}
+
+input {
+  padding: 0.5em 1em;
+  border: 0.1em solid #eee;
+  width: 100%;
 }
 
 button {
