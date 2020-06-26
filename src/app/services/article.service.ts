@@ -11,12 +11,7 @@ export class ArticleService {
   getArticles(): Article[] {
     const str = localStorage.getItem('articles');
     if (!str) {
-      return [
-        { id: 'a1', name: 'Tournevis', price: 2.34, qty: 110 },
-        { id: 'a2', name: 'Marteau', price: 2.34, qty: 20 },
-        { id: 'a3', name: 'Tournevis cruciforme', price: 2.34, qty: 40 },
-        { id: 'a4', name: 'Pince ', price: 2.34, qty: 45 },
-      ];
+      return [];
     }
     const articles = JSON.parse(str);
     return articles;
