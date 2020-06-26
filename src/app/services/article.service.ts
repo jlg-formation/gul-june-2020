@@ -34,4 +34,15 @@ export class ArticleService {
   refresh(): void {
     this.articles = this.getArticles();
   }
+
+  remove(selectedArticles: Article[]): void {
+    selectedArticles.forEach((article) => {
+      const index = this.articles.findIndex((a) => a === article);
+      if (index === -1) {
+        return;
+      }
+      this.articles.splice(index, 1);
+    });
+    this.save();
+  }
 }
