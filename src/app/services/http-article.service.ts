@@ -18,6 +18,7 @@ export class HttpArticleService extends ArticleService {
       next: (articles) => {
         console.log('articles: ', articles);
         this.articles = articles;
+        this.save();
       },
       error: (err) => {
         console.error('err: ', err);
@@ -27,5 +28,20 @@ export class HttpArticleService extends ArticleService {
       },
     });
     super.refresh();
+  }
+
+  add(article: Article): void {
+    super.add(article);
+    this.http.post<void>('http://localhost:3000/ws/articles', article).subscribe({
+      next: () => {
+        this.refresh();
+      },
+      error: (err) => {
+        console.error('err: ', err);
+      },
+      complete: () => {
+        console.log('complete');
+      },
+    });
   }
 }
