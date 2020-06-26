@@ -6,7 +6,13 @@ import { StockGuard } from '../guards/stock.guard';
 
 const routes: Routes = [
   { path: 'stock', component: ListComponent },
-  { path: 'stock/new', component: CreateComponent, canActivate: [StockGuard] },
+  {
+    path: 'stock/new',
+    component: CreateComponent,
+    canActivate: [
+      /* StockGuard */
+    ],
+  },
 ];
 
 @NgModule({
