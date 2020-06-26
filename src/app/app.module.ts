@@ -7,20 +7,14 @@ import { LayoutModule } from './layout/layout.module';
 import { HomeComponent } from './routes/home/home.component';
 import { LegalComponent } from './routes/legal/legal.component';
 import { StockModule } from './stock/stock.module';
+import { ArticleService } from './services/article.service';
+import { HttpArticleService } from './services/http-article.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    LegalComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    LayoutModule,
-    StockModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent, HomeComponent, LegalComponent],
+  imports: [BrowserModule, AppRoutingModule, LayoutModule, StockModule, HttpClientModule],
+  providers: [{ provide: ArticleService, useClass: HttpArticleService }],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
