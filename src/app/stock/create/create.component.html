@@ -3,16 +3,18 @@
   <form [formGroup]="f">
     <label>
       <div>Nom</div>
-      <input type="text" />
+      <input type="text" formControlName="name" />
     </label>
     <label>
       <div>Prix</div>
-      <input type="number" min="0" step="0.01" />
+      <input type="number" min="0" step="0.01" formControlName="price" />
     </label>
     <label>
       <div>Quantité</div>
-      <input type="number" min="0" />
+      <input type="number" min="0" formControlName="qty" />
     </label>
-    <button class="primary" type="submit">Créer</button>
+    <button [disabled]="f.invalid" class="primary" type="submit">Créer</button>
+
+    <!-- {{ f.value | json }} -->
   </form>
 </main>
